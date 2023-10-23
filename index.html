@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARMONY LIST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="test">
+    <nav id="nav">
+        <div style="float:left;display:flex;text-align: center;">
+            <h1 style="padding-left: 10px;">HARMONY LIST</h1>
+        </div>
+        <div style="float:right">
+            <input id="toggle" type="checkbox">
+        </div>
+    </nav>
+    <div id="starCollection">
+    </div>
+    <section>
+        <div class="container">
+            <div class="todolist">
+                <h2> TO-DO LIST</h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add your Task">
+                    <button  onclick="addTask()">Add</button>
+                </div>
+                <ul id="list-container">
+                    <!-- <li class="checked">Task1</li>
+                    <li class="checked">Task2</li>
+                    <li class="checked">Task3</li>-->
+                </ul>
+        </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
