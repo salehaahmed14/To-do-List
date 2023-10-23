@@ -1,0 +1,210 @@
+:root{
+    --body:rgb(255, 249, 201);
+    --nav:rgb(227, 231, 179);
+    --todolist:rgb(196, 137, 105);
+    --headings:white;
+    --listelements:rgb(228, 206, 142);
+    --text: black;
+    --scoreboard: hidden;
+    --bg: none;
+}
+.checked1 {
+    --body: #0802A3;
+    --nav: rgb(255, 118, 118);
+    --todolist:rgb(255, 75, 145);
+    --listelements:rgb(255, 205, 75);
+    --headings:black;
+    --text: #555;
+    --scoreboard: visible;
+    --bg:repeating-linear-gradient(#4e085f, #153677, #4e085f 20%);
+}
+
+body{
+    background:var(--bg);
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--body);
+    padding: 0;
+    margin-top:0;
+    margin-left:0;
+    margin-right:0;
+
+}
+#nav{
+    width:100%;
+    height:70px;
+    background-color: var(--nav);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#toggle{
+    -webkit-appearance: none;
+    position: relative;
+    width:50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: gray;
+    transition: background .3s;
+    outline: none;
+    cursor:pointer;
+    margin-top:18px;
+    margin-right:10px;
+}
+#toggle::after{
+    content:'';
+    position: absolute;
+    top:50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width:1.25rem;
+    background-color: white;
+}
+#toggle:checked{
+    background-color: rgb(0, 0, 0);
+}
+#toggle:checked:after{
+    left:70%;
+}
+.todolist{
+    margin:30px auto 20px;
+    padding :40px 30px 70px; 
+    height: auto;
+    width:80%;
+    background-color: var(--todolist);
+    border-radius: 15px;
+    float:center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+h1, h2{
+    color: var(--headings);
+    display:flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: Bold;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--headings);
+    border-radius: 33px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border: solid #555 2px;
+    width:auto;
+    box-sizing: border-box;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding:10px;
+    font-weight: Bold;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+button{
+    border:none;
+    outline:none;
+    padding:16px 50px;
+    background: var(--nav);
+    color:var(--headings);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+ul li{
+    list-style: none;
+    font-size:20px;
+    font-weight: bold;
+    padding:12px 8px 12px 50px;
+    cursor:pointer;
+    user-select: none;
+    position: relative;
+    height:40px;
+    width:auto;
+    border: solid #555 2px;
+    border-radius: 20px;
+    background-color: var(--listelements);
+    margin-right:50px;
+    font-family: 'Open Sans', sans-serif;
+    align-items: center;
+    display: flex;
+    margin-bottom:10px;
+}
+ul li::before{
+    content:'';
+    position: absolute;
+    width:28px;
+    height: 28px;
+    border-radius: 50%;
+    background-image: url(unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top:18px;
+    left:10px;
+
+    
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+ul li.checked::before{
+    background-image: url(checked.png);
+}
+ul li span{
+    position: absolute;
+    right:2px;
+    top:2px;
+    width:30px;
+    height:30px;
+    font: 22px;
+    color:black;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background-color: rgb(223, 211, 172);
+    border:solid #555 1px;
+}
+label{
+    padding:10px;
+}
+#input-box{
+    color:var(--text);
+}
+@media screen and (max-width: 480px){
+    button{
+        padding:16px 30px;
+        width:20px;
+        margin-left:-100px;
+        padding-right:60px;
+    }
+    .row{
+        width:100%;
+    }
+}
+#starCollection{
+    margin-top:30px;
+    width:30%;
+    display: flex;
+    height:50px;
+    background-color: black;
+    margin-left:35%;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    visibility: var(--scoreboard);
+    border: solid #555 2px;
+}
